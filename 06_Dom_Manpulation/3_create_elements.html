@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body>
+    <script>
+
+        const creatediv=document.createElement('div');
+        creatediv.className='main';
+        creatediv.id=Math.round(Math.random()*10+1);
+        creatediv.style.backgroundColor="yellow";
+        creatediv.setAttribute("title","title is set");
+
+        // Create a text node
+        const addText=document.createTextNode("code aur coffee");
+
+         // Append the text node to the created div
+        creatediv.appendChild(addText);
+
+         // Append the created div to the body of the document
+        document.body.appendChild(creatediv);
+        
+    </script>
+</body>
+</html>

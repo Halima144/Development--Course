@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<body>
+    <ul class="container">
+        <li id="owl"><a href="#">Owl</a></li>
+        <li id="parrot"><a href="#">Parrot</a></li>
+        <li id="cat"><a href="#">Cat</a></li>
+    </ul>
+    <script>
+        //onclick:
+        document.getElementById("owl").onclick=function(e){
+            console.log(e);
+        }
+        /*time,stamp,defaultPrevented,target,toElement,srcElement,CurrentTarget,clientX,clientY,screenX,screenY*/ /*altkey,controlkey,shiftkey,keycode*/
+
+
+       //addEventListner:
+       document.getElementById('cat').addEventListener('click',function(){
+        alert('cat clicked');
+       })
+
+       //attachEvent:
+       document.getElementById('cat').attachEvent('onclick', function() {
+            alert('Cat clicked');
+        });
+
+    </script>
+</body>
+</html>

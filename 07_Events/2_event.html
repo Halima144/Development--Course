@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+
+<body>
+    <ul class="container" style="background-color: aquamarine;">
+        <li id="owl"><a href="#">Owl</a></li>
+        <li id="parrot"><a href="#">Parrot</a></li>
+        <li id="cat"><a href="#">Cat</a></li>
+    </ul>
+    <script>
+
+        //Event Bubbling Or Event propagation(From inside to outside):
+            document.querySelector('.container').addEventListener('click',function(e){
+            alert('Container clicked');
+           },false)
+
+           document.getElementById('cat').addEventListener('click',function(e){
+            alert('Cat clicked');
+                e.stopPropagation();
+           },false)
+
+
+        //Event Capture or capturing Mode(From outside to inside)
+           document.querySelector('.container').addEventListener('click',function(e){
+            alert('Container clicked');
+           },true)
+
+           document.getElementById('cat').addEventListener('click',function(){
+            alert('Cat clicked');
+           },true)
+
+
+        //PreventDefault(not  go anywhere after click event ):
+        document.getElementById('parrot').addEventListener('click',function(e){
+            alert('parrot clicked');
+                e.preventDefault();
+           },false)
+
+
+        //Remove in Events:
+        document.querySelector('.container').addEventListener('click', function (e) {
+            const value = e.target.parentNode;
+            console.log(value);
+            value.remove();
+        }, false)
+
+    </script>
+</body>
+
+</html>

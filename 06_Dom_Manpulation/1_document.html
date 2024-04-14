@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="order" id="order">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+        <h1 class="para" id="para">Heading 01</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, minus inventore, expedita explicabo aperiam totam et impedit quae odit, cupiditate tempora qui numquam consectetur? Perferendis ipsa est necessitatibus exercitationem! Similique.</p>
+    </div>
+    <script>
+        document.getElementById("para").innerHTML = "New Paragraph";
+        const value = document.getElementById("para")
+        value.style.color = "pink";
+
+        // +++++++++++++++Get Elements Text++++++++++++++++++
+
+        value.innerText
+        //display visible text
+
+        value.textContent
+        // display all visible/unvisible text
+
+        value.innerHTML
+        //display all text with h1,p1... context
+
+        // ++++++++++++++++++++Get/set Attributes of elements ++++++++++++++++++
+        document.getElementById("para").getAttribute("id");
+        document.getElementById("para").setAttribute("class", "className");
+
+        // ++++++++++++++++++++Select Elements +++++++++++++
+        //               Query selectors :
+        document.querySelector("p");
+        document.querySelector("#para");
+        document.querySelector("input[type=password]");
+        //             Query selector All:
+        const elem = document.querySelectorAll('.order')
+        elem[1].style.color = "yellow" // Or
+        elem.forEach(function (l) {
+            l.style.backgroundColor = "purple"
+        })
+
+        // kuch cases m for each ni kaam krta tu hme array m convert krna prta h pehle 
+        const elem = document.getElementsByClassName('order')
+        elem[1].style.color = "yellow" // Or
+        const myConvertedArray = Array.from(elem);
+        myConvertedArray.forEach(function (l) {
+            l.style.backgroundColor = "purple"
+        })
+    </script>
+</body>
+
+</html>
